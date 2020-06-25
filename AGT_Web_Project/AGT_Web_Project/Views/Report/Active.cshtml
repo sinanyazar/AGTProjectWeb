@@ -1,0 +1,61 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<Entities.SelectByActiveCustomersOrders_Result>
+@{
+    ViewBag.Title = "Active";
+    Layout = "~/Views/Shared/_FilterLayout.cshtml";
+}
+
+<h2>Aktif Müşterilerin Siparişleri</h2>
+<hr />
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Sipariş Numarası</th>
+            <th>Ürün</th>
+            <th>Müşteri</th>
+            <th>Müşteri Durumu</th>
+            <th>Sipariş Durumu</th>
+            <th>Ödeme Durumu</th>
+            <th>Teslim Durumu</th>
+            <th>Sipariş Tarihi</th>
+            <th>Fiyat</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td id="tdRow">@item.OrderId</td>
+            <td id="tdRow" nowrap>@item.ProductName</td>
+            <td id="tdRow" nowrap>@item.CustomerName</td>
+            <td id="tdRow" nowrap>Aktif</td>
+            <td id="tdRow" nowrap>@item.StatusName</td>
+            <td id="tdRow" nowrap>
+                @if (item.IS_PAYMENT == true)
+                {
+                    <div>Ödeme Yapıldı</div>
+                }
+                else
+                {
+                    <div>Ödeme Yapılmadı</div>
+                }
+            </td>
+            <td id="tdRow" nowrap>
+                @if (item.IS_PAYMENT == true)
+                {
+                    <div>Teslim Edildi</div>
+                }
+                else
+                {
+                    <div>Teslim Edilmedi</div>
+                }
+            </td>
+            <td id="tdRow" nowrap>@item.OrderDate</td>
+            <td id="tdRow" nowrap>@String.Format("{0:C2}", item.Order_KDV_Price)</td>
+        </tr>
+        }
+    </tbody>
+</table>
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Active", new { page }))

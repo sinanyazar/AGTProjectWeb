@@ -1,0 +1,50 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<Entities.Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<title>Ürünler</title>
+<br />
+<h2>&emsp;Ürün Listesi</h2>
+<br />
+<style type="text/css">
+    #productTd {
+        text-align: center;
+        vertical-align: middle;
+    }
+</style>
+
+<div class="container">
+    <table style="text-align:center;" class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Ürün İsmi</th>
+                <th>Ürün Fiyatı</th>
+                <th>Açıklama</th>
+                <th>Ürün Detayları</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td id="productTd">
+                    @Html.DisplayFor(x => item.ProductName)
+                </td>
+                <td id="productTd">
+                    @String.Format("{0:C2}", item.Price)
+                </td>
+                <td id="productTd">
+                    @Html.DisplayFor(x => item.Details)
+                </td>
+                <td id="productTd">
+                    @Html.ActionLink("Detay", "Detail", new { id = item.ProductId }, new { @class = "btn btn-info" })
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+</div>

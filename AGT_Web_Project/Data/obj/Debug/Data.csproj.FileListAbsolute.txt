@@ -1,0 +1,15 @@
+C:\Users\Lenovo\source\repos\AGT_Web_Project\Data\bin\Debug\Data.dll.config
+C:\Users\Lenovo\source\repos\AGT_Web_Project\Data\bin\Debug\Data.dll
+C:\Users\Lenovo\source\repos\AGT_Web_Project\Data\bin\Debug\Data.pdb
+C:\Users\Lenovo\source\repos\AGT_Web_Project\Data\bin\Debug\EntityFramework.dll
+C:\Users\Lenovo\source\repos\AGT_Web_Project\Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Lenovo\source\repos\AGT_Web_Project\Data\bin\Debug\EntityFramework.xml
+C:\Users\Lenovo\source\repos\AGT_Web_Project\Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Lenovo\source\repos\AGT_Web_Project\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\source\repos\AGT_Web_Project\Data\obj\Debug\Data.csproj.CopyComplete
+C:\Users\Lenovo\source\repos\AGT_Web_Project\Data\obj\Debug\Data.dll
+C:\Users\Lenovo\source\repos\AGT_Web_Project\Data\obj\Debug\Data.pdb
+C:\Users\Lenovo\source\repos\AGT_Web_Project\Data\bin\Debug\Entities.dll
+C:\Users\Lenovo\source\repos\AGT_Web_Project\Data\bin\Debug\Entities.pdb
+C:\Users\Lenovo\source\repos\AGT_Web_Project\Data\bin\Debug\Entities.dll.config
+C:\Users\Lenovo\source\repos\AGT_Web_Project\Data\obj\Debug\Data.csprojAssemblyReference.cache

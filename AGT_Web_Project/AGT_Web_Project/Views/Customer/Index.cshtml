@@ -1,0 +1,66 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<Entities.Customer>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<title>Müşteriler</title>
+<br />
+<h2>&emsp;Müşteri Listesi</h2>
+<br />
+<style type="text/css">
+    #customerTd {
+        text-align: center;
+        vertical-align: middle;
+    }
+</style>
+
+<div class="container">
+    <table style="text-align:center;" class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>İsim</th>
+                <th>Soyisim</th>
+                <th>Numara</th>
+                <th>E-Mail</th>
+                <th>Adres</th>
+                <th>Aktif/Pasif</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td id="customerTd">
+                    @Html.DisplayFor(x => item.Name)
+                </td>
+                <td id="customerTd">
+                    @String.Format("{0:C2}", item.Surname)
+                </td>
+                <td id="customerTd">
+                    @Html.DisplayFor(x => item.Number)
+                </td>
+                <td id="customerTd">
+                    @Html.DisplayFor(x => item.Mail)
+                </td>
+                <td id="customerTd">
+                    @Html.DisplayFor(x => item.Address)
+                </td>
+                <td id="customerTd">
+                    @if (item.IS_ACTIVE == true)
+                    {
+                        <div style="background-color:green;color:white;">Aktif</div>
+                    }
+                    else
+                    {
+                        <div style="background-color:red;color:black;">Pasif</div>
+                    }
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+</div>

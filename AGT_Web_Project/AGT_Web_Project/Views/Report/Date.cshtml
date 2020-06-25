@@ -1,0 +1,48 @@
+﻿@model PagedList.IPagedList<Entities.SelectByOrderDate_Result>
+@{
+    ViewBag.Title = "Date";
+    Layout = "~/Views/Shared/_FilterLayout.cshtml";
+}
+
+<h2>Tarihe Göre Listeme</h2>
+
+@using (Ajax.BeginForm("Date", "Report", FormMethod.Post, new AjaxOptions { OnSuccess = "dataLoad" }))
+{
+    <table class="table">
+        <tbody>
+            <tr>
+                <td width="150px;">
+                    &emsp;Başlangıç Tarihi
+                    <input id="datepicker1" name="dtpStartDate" width="150" />
+                    <script type="text/javascript">
+                        $('#datepicker1').datepicker({
+                            uiLibrary: 'bootstrap4',
+                            format: 'dd/mm/yyyy'
+                        });
+                    </script>
+
+                </td>
+                <td width="150px;">
+                    &emsp;Bitiş Tarihi
+                    <input id="datepicker2" name="dtpFinishDate" width="150" />
+                    <script type="text/javascript">
+                        $('#datepicker2').datepicker({
+                            uiLibrary: 'bootstrap4',
+                            format: 'dd/mm/yyyy'
+                        });
+                    </script>
+                </td>
+                <td><br /><button type="submit" class="btn btn-success col-sm-3">ARA</button></td>
+            </tr>
+        </tbody>
+    </table>
+}
+<div id="ajax-main">
+    @Html.Partial("_ByDate", Model)
+</div>
+
+<script type="text/javascript">
+    function dataLoad(result) {
+        $("#ajax-main").html(result);
+    }
+</script>

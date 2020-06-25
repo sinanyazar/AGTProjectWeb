@@ -1,0 +1,35 @@
+﻿@model PagedList.IPagedList<Entities.SelectByOrderPrice_Result>
+@{
+    ViewBag.Title = "Price";
+    Layout = "~/Views/Shared/_FilterLayout.cshtml";
+}
+
+<h2>Fiyata Göre Listeleme</h2>
+
+@using (Ajax.BeginForm("Price", "Report", FormMethod.Post, new AjaxOptions { OnSuccess = "dataLoad" }))
+{
+    <table class="table">
+        <tbody>
+            <tr>
+                <td width="150px;">
+                    &emsp;En Düşük Fiyat
+                    <input type="text" class="form-control" style="width:150px;" id="txtFilter" name="txtMinPrice" placeholder="Min Fiyat" />
+                </td>
+                <td width="150px;">
+                    &emsp;En Yüksek Fiyat
+                    <input type="text" class="form-control" style="width:150px;" id="txtFilter" name="txtMaxPrice" placeholder="Max Fiyat" />
+                </td>
+                <td><br /><button type="submit" class="btn btn-success col-sm-3">ARA</button></td>
+            </tr>
+        </tbody>
+    </table>
+}
+<div id="ajax-main">
+    @Html.Partial("_ByPrice", Model)
+</div>
+
+<script type="text/javascript">
+    function dataLoad(result) {
+        $("#ajax-main").html(result);
+    }
+</script>

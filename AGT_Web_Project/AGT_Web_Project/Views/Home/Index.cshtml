@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<title>Anasayfa</title>
+<br />
+<h2>&emsp;Hoş Geldiniz</h2>
+<br />
+
+<div class="container">
+    <div>
+        <h4>Hava Durumu ;</h4>
+    </div>
+    <table class="table table-info table-striped">
+        <tbody>
+            <tr>
+                <td><b>Şehir</b></td>
+                <td><b>:</b></td>
+                <td>@ViewBag.City</td>
+            </tr>
+            <tr>
+                <td><b>Maksimum Sıcaklık</b></td>
+                <td><b>:</b></td>
+                <td>@ViewBag.CityMaxTemperature</td>
+            </tr>
+            <tr>
+                <td><b>Minimum Sıcaklık</b></td>
+                <td><b>:</b></td>
+                <td>
+                    @if (ViewBag.CityMinTemperature != null)
+                    {
+                        @ViewBag.CityMinTemperature
+                    }
+                    else
+                    {
+                        <div>Minimun sıcaklık değeri bulunmuyor.</div>
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td><b>Durum</b></td>
+                <td><b>:</b></td>
+                <td>@ViewBag.CityState</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<hr />
+<div class="container">
+    <div>
+        <h4>Merkez Bankası Kurları ;</h4>
+    </div>
+    <table class="table table-warning table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Kur</th>
+                <th>Alış Fiyatı</th>
+                <th>Satış Fiyatı</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in ViewBag.RateList)
+            {
+                <tr>
+                    <td><b>@item.Name</b></td>
+                    <td><b>@item.ForexSelling</b></td>
+                    <td><b>@item.ForexBuying</b></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

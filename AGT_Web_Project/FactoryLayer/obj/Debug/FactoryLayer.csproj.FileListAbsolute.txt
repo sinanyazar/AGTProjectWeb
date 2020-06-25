@@ -1,0 +1,15 @@
+C:\Users\Lenovo\source\repos\AGT_Web_Project\FactoryLayer\bin\Debug\FactoryLayer.dll
+C:\Users\Lenovo\source\repos\AGT_Web_Project\FactoryLayer\bin\Debug\FactoryLayer.pdb
+C:\Users\Lenovo\source\repos\AGT_Web_Project\FactoryLayer\bin\Debug\Data.dll
+C:\Users\Lenovo\source\repos\AGT_Web_Project\FactoryLayer\bin\Debug\Entities.dll
+C:\Users\Lenovo\source\repos\AGT_Web_Project\FactoryLayer\bin\Debug\EntityFramework.dll
+C:\Users\Lenovo\source\repos\AGT_Web_Project\FactoryLayer\bin\Debug\Data.pdb
+C:\Users\Lenovo\source\repos\AGT_Web_Project\FactoryLayer\bin\Debug\Data.dll.config
+C:\Users\Lenovo\source\repos\AGT_Web_Project\FactoryLayer\bin\Debug\Entities.pdb
+C:\Users\Lenovo\source\repos\AGT_Web_Project\FactoryLayer\bin\Debug\Entities.dll.config
+C:\Users\Lenovo\source\repos\AGT_Web_Project\FactoryLayer\bin\Debug\EntityFramework.xml
+C:\Users\Lenovo\source\repos\AGT_Web_Project\FactoryLayer\obj\Debug\FactoryLayer.csprojAssemblyReference.cache
+C:\Users\Lenovo\source\repos\AGT_Web_Project\FactoryLayer\obj\Debug\FactoryLayer.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\source\repos\AGT_Web_Project\FactoryLayer\obj\Debug\FactoryLayer.csproj.CopyComplete
+C:\Users\Lenovo\source\repos\AGT_Web_Project\FactoryLayer\obj\Debug\FactoryLayer.dll
+C:\Users\Lenovo\source\repos\AGT_Web_Project\FactoryLayer\obj\Debug\FactoryLayer.pdb

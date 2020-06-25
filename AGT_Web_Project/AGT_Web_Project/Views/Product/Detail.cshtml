@@ -1,0 +1,82 @@
+﻿@model Entities.Product
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<title>Detay</title>
+<style>
+    #cell{
+        width:20%;
+        font-weight:bold;
+    }
+</style>
+<br />
+<h2>&emsp;Ürün Detayı</h2>
+<br />
+
+<div class="container table-responsive">
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <td id="cell">
+                    Ürün Id
+                </td>
+                <td>@Model.ProductId</td>
+            </tr>
+        </tbody>
+        <tr>
+            <td id="cell">
+                Ürün İsmi
+            </td>
+            <td>@Model.ProductName</td>
+        </tr>
+        <tr>
+            <td id="cell">
+                Ürün Fiyatı
+            </td>
+            <td>@String.Format("{0:C2}", Model.Price)</td>
+        </tr>
+        <tr>
+            <td id="cell">
+                Ürün Açıklaması
+            </td>
+            <td>@Model.Details</td>
+        </tr>
+        <tr>
+            <td id="cell">
+                KDV Oranı
+            </td>
+            <td>% @Model.KDV_Rate</td>
+        </tr>
+        <tr>
+            <td id="cell">
+                KDV Uygulanmış Mı?
+            </td>
+            <td>
+                @if (Model.IS_KDV == true)
+                {
+                    <div>Evet</div>
+                }
+                else
+                {
+                    <div>Hayır</div>
+                }
+            </td>
+        </tr>
+        <tr>
+            <td id="cell">
+                Oluşturulma Tarihi
+            </td>
+            <td>@Model.CreateDate</td>
+        </tr>
+        <tr>
+            <td id="cell">
+                Güncelleme Tarihi
+            </td>
+            <td>@Model.UpdateDate</td>
+        </tr>
+    </table>
+    <div>
+        @Html.ActionLink("Geri Dön", "Index", null, new { @class = "btn btn-primary" })
+    </div>
+</div>
