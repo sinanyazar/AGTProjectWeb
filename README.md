@@ -1,1 +1,1 @@
-# AGTProjectWeb
+Proje bir ASP.Net MVC web uygulamasıdır. Proje çok katmanlı yazılım geliştirme metodolojilerine uygun bir şekilde yapıldı. Veritabanı olarak MS-SQL, ORM olarak Entity Framework DB First yaklaşımı kullanıldı. Proje içinde singleton ve unit of work design patternleri kullanıldı. Projenin arayüz tasarımında ise Bootstrap, JavaScript, Jquery gibi eklentiler kullanıldı.
